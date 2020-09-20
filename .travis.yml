@@ -1,0 +1,32 @@
+language: node_js
+node_js:
+  - 12
+
+sudo: required
+services:
+ - docker
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - rm -f git-rev && git rev-parse --short HEAD | tr -d '\n' > git-rev
+        - npm install
+        - npm test
+    - stage: build docker image
+      script:
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - make build tag
+      - make publish
+      - rm -f /home/travis/.docker/config.json
+      
+
+addons:
+  sonarcloud:
+    organization: "santoshpandey11"
+    token:
+      secure: $SOMEVAR  # encrypted value of your token
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner
