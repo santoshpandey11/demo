@@ -1,0 +1,29 @@
+{
+  "name": "node_api_example",
+  "version": "1.0.3",
+  "description": "Simple node API example app",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "start": "forever .",
+    "start-dev": "export NODE_ENV=DEV && nodemon .",
+    "lint": "./node_modules/eslint/bin/eslint.js ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "deep-equal": "^2.0.1",
+    "express": "^4.17.1",
+    "forever": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "mocha": "^7.1.1",
+    "nodemon": "^2.0.2",
+    "request": "^2.88.0"
+  }
+}
