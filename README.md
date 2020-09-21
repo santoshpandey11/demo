@@ -6,8 +6,8 @@ Calling the API returns:
 - The latest git commit SHA.
 - A description of the application.
 
-Sending a GET request to http://localhost:8000/version should return similar to the following:
-
+Sending a GET request to http://IP:8000/version should return similar to the following:
+where IP is output from Kubectl get service
 ```json
 "myapplication": [
   {
@@ -78,6 +78,6 @@ To use the provided Makefile the following are required:
 - `docker`
 - `git`
 
-And if you want to run the tests manually you'll need
+kubernetes/api-deployment.yml will deploy application on kubernetes
 
 
