@@ -68,7 +68,9 @@ Travis:
 - trigger Ansible playbook to provision kubernetes and deploy application 
 
  need to set the `DOCKER_USERNAME` , `DOCKER_PASSWORD` , `KUBERNETESENDPOINT` , `KUBERNETESCERTIFICATE` `KUBERNETESTOKEN` variables in the Travis UI.
-
+  Kubernetes connection details are found at 
+  kubectl ./kube/config
+  
 ### Requirements
 
 To use the provided Makefile the following are required:
