@@ -22,9 +22,9 @@ jobs:
     - stage: Kubernetes setup
       script:
       # Check syntax of ansible playbook
-      - ansible-playbook /etc/ansible/roles/role_under_test/setup-Python-Vagrant-Vbox.yaml --syntax-check
+      - ansible-playbook setup-Python-Vagrant-Vbox.yaml --syntax-check
       # Run ansible playbook
-      - ansible-playbook /etc/ansible/roles/role_under_test/setup-Python-Vagrant-Vbox.yaml
+      - ansible-playbook setup-Python-Vagrant-Vbox.yaml
 
 notifications:
   email: false
