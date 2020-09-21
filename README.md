@@ -21,6 +21,7 @@ Sending a GET request to http://localhost:8000/version should return similar to 
 ## Infrastructure for kubernetes
 spin up VM with centos with At least 8 GB of RAM and 15 GB of free hard disk space for the virtual machines. ensure port 22, 8080 and 8080 is available for traffic
 Software Installations and commands:
+update  hosts: PIP in file setup-Python-Vagrant-Vbox.yaml
 yum install  wget ;
 yum install curl ;
 script setup-Python-Vagrant-Vbox.yml will install:
@@ -55,10 +56,6 @@ vboxnet0 virtual iface: 192.168.50.1
 Calling the API returns:
 A minimal API built with Express JS and run with Docker (distroless/nodejs) that exposes a HTTP API server.
 
-Infrastructure
-Ubuntu 18.4
-Software:
-Git, Travis, Vagrant, virtualbox and Ansible
 ### CI Builds
 
 The Travis CI build is configured in `.travis.yml`
@@ -68,7 +65,7 @@ Travis:
 - Builds the application-in Docker.
 - Runs some basic tests.
 - Deploys the docker image to dockerhub
-- trigger Ansible playbook to provision kubernetes and deploy application
+- trigger Ansible playbook to provision kubernetes and deploy application 
 
  need to set the `DOCKER_USERNAME` , `DOCKER_PASSWORD` , `KUBERNETESENDPOINT` , `KUBERNETESCERTIFICATE` `KUBERNETESTOKEN` variables in the Travis UI.
 
